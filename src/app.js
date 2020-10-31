@@ -51,9 +51,6 @@ app.use(express.static(__dirname + '/../node_modules/'));
 app.use(cors())
 app.use(cookieParser());
 
-app.get('/', function(req, res) {
-  res.redirect('asdasd')
-});
 
 app.get('/login', function(req, res) {
   var state = generateRandomString(16);
@@ -82,7 +79,7 @@ app.get('/callback', function(req, res) {
   var storedState = req.cookies ? req.cookies[stateKey] : null;
 
   if (state === null || state !== storedState) {
-    res.redirect('/#' +
+    res.redirect('/playlist' +
       querystring.stringify({
         error: 'state_mismatch'
       }));
@@ -120,7 +117,7 @@ app.get('/callback', function(req, res) {
         });
 
         // we can also pass the token to the browser to make requests from there
-        res.redirect('/#' +
+        res.redirect('/playlist' +
           querystring.stringify({
             access_token: access_token,
             refresh_token: refresh_token

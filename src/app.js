@@ -52,7 +52,7 @@ app.use(cors())
 app.use(cookieParser());
 
 
-app.get('/login', function(req, res) {
+app.get('/playlist/login', function(req, res) {
   var state = generateRandomString(16);
   res.cookie(stateKey, state);
 

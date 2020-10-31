@@ -16,7 +16,7 @@ var cookieParser = require('cookie-parser');
 
 
 // Read the host address and the port from the environment
-var client_id = process.env.HOST; // Your client id
+var client_id = process.env.HEROKU_client_id; // Your client id
 var client_secret = process.env.HEROKU_client_secret; // Your secret
 var redirect_uri = process.env.HEROKU_redirect_uri; // Your redirect uri
 const hostname = process.env.HOST;

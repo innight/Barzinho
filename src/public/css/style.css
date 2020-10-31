@@ -5,7 +5,7 @@
   --primary-color: #e50914;
   --dark-color: #222;
   --light-color: #f4f4f4;
-  --overlay-color: rgba(0, 0, 0, 0.7);
+  --overlay-color: rgba(0, 0, 0, 0.5);
   --gap-small: 22px;
   --gap-smaller: 15px;
   --gap-medium: 30px;
@@ -69,7 +69,7 @@ a {
 
 .showcase:before {
   content: '';
-  background: url('../img/interior-of-modern-building-331107.jpg') no-repeat center center/cover;
+  background: url('../img/baresplanada.jpg') no-repeat center center/cover;
   position: absolute;
   top: 0;
   left: 0;

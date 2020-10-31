@@ -47,12 +47,13 @@ var stateKey = 'spotify_auth_state';
 var app = express();
 
 app.use(express.static(__dirname + '/public/'))
-   .use(cors())
-   .use(cookieParser());
+app.use(express.static(__dirname + '/../node_modules/'));
+app.use(cors())
+app.use(cookieParser());
 
-   app.get('/', function(req, res) {
-     app.render('/homepage.html')
-   });
+app.get('/', function(req, res) {
+  res.redirect('asdasd')
+});
 
 app.get('/login', function(req, res) {
   var state = generateRandomString(16);
@@ -125,7 +126,7 @@ app.get('/callback', function(req, res) {
             refresh_token: refresh_token
           }));
       } else {
-        res.redirect('/#' +
+        res.redirect('/playlist.html' +
           querystring.stringify({
             error: 'invalid_token'
           }));
@@ -158,5 +159,5 @@ app.get('/refresh_token', function(req, res) {
   });
 });
 
-console.log(`Listening on {port}`);
+console.log(`Listening on ${port}`);
 app.listen(port || 3000);

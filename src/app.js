@@ -51,7 +51,7 @@ app.use(express.static(__dirname + '/public/'))
    .use(cookieParser());
 
    app.get('/', function(req, res) {
-     app.render('homepage.html')
+     app.render('/homepage.html')
    });
 
 app.get('/login', function(req, res) {
